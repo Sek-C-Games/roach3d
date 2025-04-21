@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://mtkbaf2okxnv"]
+
+[ext_resource type="Script" uid="uid://cfsjx1pf63spr" path="res://scripts/classes/bullet.gd" id="1_5yyug"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjygj"]
+metallic = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ph5gb"]
+material = SubResource("StandardMaterial3D_xjygj")
+radius = 0.015
+height = 0.03
+
+[node name="shotgun_bullets" type="CPUParticles3D"]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("SphereMesh_ph5gb")
+direction = Vector3(0, 0, -1)
+spread = 5.0
+gravity = Vector3(0, -1, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+script = ExtResource("1_5yyug")
+metadata/_custom_type_script = "uid://cfsjx1pf63spr"
