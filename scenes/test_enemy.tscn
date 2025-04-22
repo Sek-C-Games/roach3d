@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkbermh3pkndf"]
+
+[ext_resource type="Script" uid="uid://dit7ehb4hen3h" path="res://scripts/test_enemy.gd" id="1_h17bh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kad7v"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hqokx"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="enemy" type="CharacterBody3D" node_paths=PackedStringArray("main_mesh")]
+script = ExtResource("1_h17bh")
+main_mesh = NodePath("MeshInstance3D")
+metadata/_custom_type_script = "uid://dx52ftm38micq"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_kad7v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_hqokx")
